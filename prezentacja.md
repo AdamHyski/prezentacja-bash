@@ -148,7 +148,7 @@ bash: /bin/rm: Lista argumentów za długa
 --
 Można tak
 ``` shell
-find tmp -print0 | xargs -0 rm 
+find tmp -print0 | xargs -0 rm
 rm: nie można usunąć 'tmp': Jest katalogiem
 ls -a tmp
 .  ..
@@ -266,6 +266,17 @@ cat <<< hello world
 echo hello world | cat
 ```
 ---
+# xargs
+### Jak połączyć ze sobą jeżeli jedna z komend spodziewa się argumentu a dostaje STDIN?
+--
+
+``` shell
+cut -d: -f1 < /etc/passwd | sort | xargs echo
+cut -d: -f1 /etc/passwd | sort | xargs echo
+```
+???
+jeżeli nie  będzie ostatniego `|`  to użytkownicy będą w nowych liniach
+---
 
 class: center, middle
 
@@ -326,13 +337,46 @@ find /var/log -not -uid 0  2>/dev/null
 ```
 ---
 # Szukanie po rozmiarze
+- `-empty` szuka pustych plików
+
+--
+
+### Mniej niż:
+``` shell
+find .  -size -4k
+```
+--
+
+### Więcej niż:
+``` shell
+find .  -size +100M
+```
 
 ---
 # Szukanie po czasie  
+### Zmieniony w ciągu ostatnich 15 minut:
+``` shell
+find . -mmin -15
+```
+--
+
+### Nie zmieniony w ciągu ostatnich 90 dni:
+``` shell
+find . -mtime +90
+```
+--
+
+### starszy niż `index.php`
+``` shells
+find . -newer index.php
+```
 
 ---
 # Szukanie - wykonywanie komend
 
+``` shells
+find . -newer index.php
+```
 ---
 class: center, middle
 
