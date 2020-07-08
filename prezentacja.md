@@ -172,18 +172,59 @@ rm tmp/*
 bash: /bin/rm: Lista argumentów za długa
 ```
 --
+Można tak
+``` shell
+find tmp -print0 | xargs -0
+rm: nie można usunąć 'tmp': Jest katalogiem
+ls -a tmp
+.  ..
+```
+--
+Można i tak
 
 ``` shell
-find tmp -print0 | xargs -0 rm
+find tmp -type f -exec rm {} \;
 ```
 
-
----
-
-
 --
----
+Elegancka metoda
 
+``` shell
+find tmp -type f -delete
+```
+---
+class: center, middle
+
+# Wróćmy do teorii
+
+
+???
+Zanim jednak find to chwilę na pipe
+---
+# Procesy
+
+.center[![Proces: wyjścia i wejście](./img/Process.png)]
+--
+Procesy można łączyć ze sobą
+
+.center[![Proces: wyjścia i wejście](./img/Cowsey.png)]
+``` bash
+fortune | cowsay
+ _________________________________
+/ You are taking yourself far too \
+\ seriously.                      /
+ ---------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+```
+---
+# pipe
+
+---
 class: center, middle
 
 # Dziękuję
