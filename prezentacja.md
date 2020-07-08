@@ -83,13 +83,7 @@ rm *
 - co jeszcze może pójść nie tak?
 
 ---
-### `rm *`
-
-.left-column[
-### Czym jest rm?
-
-]
-.right-column[
+## Czym jest rm?
 #### Gdzie jest?
 ``` shell
 whereis rm
@@ -103,68 +97,44 @@ echo $PATH
 > W momencie wydania przez użytkownika dowolnego polecenia, system przeszukuje ścieżki po każdym elemencie po kolei (w kierunku od lewej do prawej), szukając nazwy pliku, który pasuje do nazwy wydanego polecenia.
 > © wikipedia
 
-]
 
 ---
-### `rm *`
+## Co może pójść nie tak?
 
-.left-column[
-### Czym jest rm?
-### Co może pójść nie tak?
-
-]
-.right-column[
-#### sprawdźmy to
 ``` shell
 rm tmp/*
 bash: /bin/rm: Lista argumentów za długa
 ```
-
+--
+### To ile może być argumentów?
 ``` shell
 getconf ARG_MAX
+2097152
 ```
 
 
-]
 ---
 
 class: center, middle
 ![But how - meme](./img/But-how--meme-49242.jpg)
 
 ---
-### `rm *`
 
-.left-column[
-### Czym jest rm?
-### Co może pójść nie tak?
-### Co jest argumentem?
+## Co jest argumentem?
+--
 
-]
-.right-column[
-pogadać o bash
-#TODO
+### Ale najpierw czym jest BASH?
+> Bash is an sh-compatible command language interpreter that executes commands read from the standard input or from a file. Bash also incorporates useful features from the Korn and C shells (ksh and csh).
 
-]
+--
 
----
-### `rm *`
+### Co jest argumentem?  Jak to sprawdzić?
 
-.left-column[
-### Czym jest rm?
-### Co może pójść nie tak?
-### Co jest argumentem?
-### Jak to sprawdzić?
-
-]
-.right-column[
-# TODO
 
 ``` shell
 echo rm *
 ```
 
-
-]
 ???
 Tu  jak ktoś używa chwilę konsol powinien się natychmiast lekko skrzywić
 
@@ -178,7 +148,7 @@ bash: /bin/rm: Lista argumentów za długa
 --
 Można tak
 ``` shell
-find tmp -print0 | xargs -0
+find tmp -print0 | xargs -0 rm 
 rm: nie można usunąć 'tmp': Jest katalogiem
 ls -a tmp
 .  ..
