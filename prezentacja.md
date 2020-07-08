@@ -178,9 +178,6 @@ find tmp -print0 | xargs -0 rm
 ```
 
 
-???
-Tu  jak ktoś używa chwilę konsol powinien się natychmiast lekko skrzywić
-
 ---
 
 
