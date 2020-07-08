@@ -6,7 +6,7 @@ class: center, middle
 ---
 class: center, middle
 
-720p
+## 720p
 ---
 .left-column[
 
@@ -48,6 +48,9 @@ CLI: Command-Line Interface
   - BASH,
   - ASH,
   - ZSH,
+  - CSH,
+  - KSH,
+  - ect…
 --
 
 - inne konsole
@@ -87,10 +90,18 @@ rm *
 
 ]
 .right-column[
+#### Gdzie jest?
 ``` shell
 whereis rm
 rm: /bin/rm /usr/share/man/man1/rm.1.gz
 ```
+#### Skąd wie że ma tam szukać?
+``` shell
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+```
+> W momencie wydania przez użytkownika dowolnego polecenia, system przeszukuje ścieżki po każdym elemencie po kolei (w kierunku od lewej do prawej), szukając nazwy pliku, który pasuje do nazwy wydanego polecenia.
+> © wikipedia
 
 ]
 
