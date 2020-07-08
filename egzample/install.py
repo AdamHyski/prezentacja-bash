@@ -3,4 +3,4 @@ from pathlib import Path
 
 # Tworzymy śmietnik
 for i in range(3000000):
-    Path('./tmp/'+str(i) ).touch()
+    Path('./tmp/'+str(i)+'.tmp').touch()
