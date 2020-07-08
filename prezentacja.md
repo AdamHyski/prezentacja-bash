@@ -299,4 +299,71 @@ echo hello world | cat
 
 class: center, middle
 
+# Find
+
+---
+## Wróćmy do find
+### podstawy
+
+``` shell
+find /etc -name '*.conf'
+find /etc -iname 'nginx.conf'
+find /etc -name '*.d' -type d
+find /etc -not -name '*.conf'
+```
+--
+`-not` == `!`
+`-iname` case-insensitive
+---
+## Szukanie po typie
+### Pliki:
+``` shell
+find . -type f
+```
+--
+### Katalogi:
+``` shell
+find . -type d
+```
+--
+### Linki:
+``` shell
+find . -type l
+```
+---
+## Szukanie po właścicielu
+### User
+- `-user` szuka po nazwie usera (ew. po id)
+- `-uid` szuka po id usera
+
+``` shell
+find /etc -name '*.conf' -user root
+find /etc -name '*.conf' -user 1000
+find /etc -uid 1000  
+find /etc -not -user 0  2>/dev/null
+
+```
+--
+### Group
+- `-group` szuka po nazwie grupy (ew. po id)
+- `-gid` szuka po id grupy
+
+``` shell
+find /var/log  -group adm
+find /var/log  -group 4
+find /var/log -gid 4  
+find /var/log -not -uid 0  2>/dev/null
+```
+---
+# Szukanie po rozmiarze
+
+---
+# Szukanie po czasie  
+
+---
+# Szukanie - wykonywanie komend
+
+---
+class: center, middle
+
 # Dziękuję
