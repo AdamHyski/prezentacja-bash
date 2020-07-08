@@ -267,6 +267,36 @@ du log
 - `du` disk usage
 
 ---
+# STDIN
+- command < file
+``` shell
+mysql company_db < dump.sql
+cat dump.sql | mysql company_db
+pv dump.sql | mysql company_db
+```
+--
+- command << here-document
+``` shell
+cat <<EOF >lorem
+> lorem iopsum
+> sit ammen
+> EOF
+cat lorem
+lorem iopsum
+sit ammen
+# this is just for IDE ;)
+EOF
+```
+
+--
+
+- command <<< Here Strings
+``` shell
+cat <<< hello world
+echo hello world | cat
+```
+---
+
 class: center, middle
 
 # Dziękuję
