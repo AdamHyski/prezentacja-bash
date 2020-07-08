@@ -366,7 +366,7 @@ find . -mtime +90
 ```
 --
 
-### starszy niż `index.php`
+### starszy niż plik 
 ``` shells
 find . -newer index.php
 ```
@@ -374,9 +374,21 @@ find . -newer index.php
 ---
 # Szukanie - wykonywanie komend
 
-``` shells
-find . -newer index.php
+- `-exec` wykonuje komendę na wyniku wyszukiwania
+
+``` shell
+find . -name  '*.sh' -exec chmod +x {} \;
 ```
+--
+
+### pipe
+
+``` shell
+find . -name  '*.sh' -print0 | xargs -0 chmod +x
+```
+należy uważać z nazwami plików zawierającymi znaki specjalne jaki i spacje
+
+
 ---
 class: center, middle
 
