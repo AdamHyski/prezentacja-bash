@@ -226,7 +226,45 @@ fortune | cowsay
 
 ```
 ---
-# pipe
+# Przekierowania
+``` shell
+date > log
+cat log
+śro, 8 lip 2020, 18:06:54 CEST
+date > log
+cat log
+śro, 8 lip 2020, 18:07:09 CEST
+```
+--
+``` shell
+date >> log
+cat log
+śro, 8 lip 2020, 18:07:09 CEST
+śro, 8 lip 2020, 18:09:07 CEST
+
+```
+---
+# STDERR
+
+``` shell
+echo foo >> /dev/stderr
+```
+``` shell
+echoerr() { echo "$@" 1>&2; }
+echoerr error world
+error world
+```
+--
+``` shell
+echoerr error world 1>log
+error world
+wc log
+0 0 0 log
+du log
+0       log
+```
+- `wc` counts the number of bytes, characters, whitespace-separated words, and newlines in each given file,
+- `du` disk usage
 
 ---
 class: center, middle
