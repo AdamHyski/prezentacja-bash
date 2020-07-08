@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+@font-face {
+  font-family: '3270-Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: local('3270-Medium'), url(./3270-Font/3270Medium.woff) format('woff');
+}
+body { font-family: 'Lato'; }
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+.remark-code, .remark-inline-code { font-family: '3270-Medium'; }
+.remark-inline-code {background-color: #F0F0F0;padding: .25em;}
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+  .left-column h2:last-of-type, .left-column h3:last-child {
+    color: #000;
+  }
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+img {
+  max-width:100%;
+  max-height:100%;
+}
+.red{
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    font-size: 0.72222rem;
+    font-weight: normal;
+    margin-bottom: 1.11111rem;
+    padding: 0.77778rem 1.33333rem 0.77778rem 0.77778rem;
+    position: relative;
+    /* transition: opacity 300ms ease-out; */
+    background-color: #f04124;
+    border-color: #de2d0f;
+    color: #FFFFFF;
+}
