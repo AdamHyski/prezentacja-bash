@@ -1,6 +1,0 @@
----
-- hosts:       demo
-  tasks:
-  - name:     Change hostname
-    hostname:
-      name:   demo.hyski.pl
