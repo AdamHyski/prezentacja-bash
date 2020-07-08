@@ -114,10 +114,18 @@ echo $PATH
 
 ]
 .right-column[
-sprawdźmy to
+#### sprawdźmy to
+``` shell
+rm tmp/*
+bash: /bin/rm: Lista argumentów za długa
+```
 
 
 ]
+---
+
+class: center, middle
+![But how - meme](./img/But-how--meme-49242.jpg)
 
 ---
 ### `rm *`
@@ -129,8 +137,8 @@ sprawdźmy to
 
 ]
 .right-column[
-sprawdźmy to
-
+pogadać o bash
+#TODO
 
 ]
 
@@ -145,17 +153,37 @@ sprawdźmy to
 
 ]
 .right-column[
-sprawdźmy to
+# TODO
 
-
-]
-
----
 ``` shell
 echo rm *
 ```
+
+
+]
 ???
 Tu  jak ktoś używa chwilę konsol powinien się natychmiast lekko skrzywić
+
+---
+###  Jak to posprzątać?
+Wiemy że to nie działa
+``` shell
+rm tmp/*
+bash: /bin/rm: Lista argumentów za długa
+```
+--
+
+``` shell
+find tmp -print0 | xargs -0 rm
+```
+
+
+???
+Tu  jak ktoś używa chwilę konsol powinien się natychmiast lekko skrzywić
+
+---
+
+
 --
 ---
 

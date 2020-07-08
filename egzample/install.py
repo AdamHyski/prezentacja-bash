@@ -2,5 +2,8 @@
 from pathlib import Path
 
 # Tworzymy śmietnik
-for i in range(3000000):
+# getconf ARG_MAX + 1
+for i in range(2097152+1):
     Path('./tmp/'+str(i)+'.tmp').touch()
+    if i % 100000 == 0 :
+        print ( i )
