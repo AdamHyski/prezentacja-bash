@@ -120,6 +120,10 @@ rm tmp/*
 bash: /bin/rm: Lista argumentów za długa
 ```
 
+``` shell
+getconf ARG_MAX
+```
+
 
 ]
 ---
