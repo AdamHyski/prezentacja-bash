@@ -10,27 +10,22 @@ class: center, middle, dataart
 
 ## 720p
 ---
-.left-column[
-
+class: dataart
 ### O mnie
-]
-.right-column[
 
 ``` yaml
 ---
 - Speaker:
     Name:     Adam Hyski
     Twitter:  @AdamHyski
-    Page:     https://hyski.pl
-    Mail:     adam@hyski.pl
     GitHub:   github.com/AdamHyski
 
 ```
+--
 Gdzie będzie prezentacja?:
+- https://adamhyski.github.io/prezentacja-bash
 - https://github.com/AdamHyski/prezentacja-bash
-- [to też ]
 
-]
 ---
 class: dataart
 # Dlaczego wykład o CLI?
