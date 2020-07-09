@@ -309,11 +309,53 @@ cat << EOD
 > $SOME_VAR
 > tu jakiś kontekst
 > EOD
-EOD # For IDE ;) 
+EOD # For IDE ;)
 cat <<< $SOME_VAR
 ```
 
 ---
+# Funkcje
+### Definicja
+``` bash
+show_error() {
+textred=$(tput setaf 1)
+colorreset=$(tput sgr0)
+ERROR_MSG="$@"
+  cat << EOF
+${textred}
+###
+#  ${ERROR_MSG}
+###${colorreset}
+EOF
+}
+```
+
+---
+### Co funkcja zwraca?
+``` shell
+echo test
+test
+echo $?
+0
+```
+
+---
+# Skróty klawiszowe
+``` shell
+clear
+```
+
+`Ctrl` + `L`
+
+--
+## koniec STDIN
+``` shell
+exit
+```
+
+`Ctrl` + `D`
+
+--
 
 ---
 
