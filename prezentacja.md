@@ -277,6 +277,26 @@ cut -d: -f1 /etc/passwd | sort | xargs echo
 ???
 jeżeli nie  będzie ostatniego `|`  to użytkownicy będą w nowych liniach
 ---
+class: center, middle
+
+# Skrypty
+
+---
+# Podstawy
+##  #! (Hash-Bang)
+``` shell
+#!/bin/bash
+```
+--
+``` shell
+#/usr/bin/python3
+```
+--
+``` shell
+#!/usr/bin/env python3 
+```
+
+---
 
 class: center, middle
 
@@ -366,7 +386,7 @@ find . -mtime +90
 ```
 --
 
-### starszy niż plik 
+### starszy niż plik
 ``` shells
 find . -newer index.php
 ```
@@ -387,6 +407,7 @@ find . -name  '*.sh' -exec chmod +x {} \;
 find . -name  '*.sh' -print0 | xargs -0 chmod +x
 ```
 należy uważać z nazwami plików zawierającymi znaki specjalne jaki i spacje
+
 
 
 ---
