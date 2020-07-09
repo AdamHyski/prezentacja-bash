@@ -264,8 +264,7 @@ cat <<EOF >lorem
 cat lorem
 lorem iopsum
 sit ammen
-# this is just for IDE ;)
-EOF
+EOF # this is just for IDE ;)
 ```
 
 --
