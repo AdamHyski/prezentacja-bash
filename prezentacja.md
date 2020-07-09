@@ -37,9 +37,9 @@ class: dataart
 ---
 class: dataart
 # Co to jest CLI?
-```
-CLI: Command-Line Interface
-```
+
+> CLI: Command-Line Interface
+
 
 - konsole
   - SH,
