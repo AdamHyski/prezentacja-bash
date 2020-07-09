@@ -1,10 +1,12 @@
-
+class: center, middle
+![DataArt - Logo](./img/DataArt_Logo.png)
+---
 class: center, middle
 
 # Konsola  
 ## głębsze spojrzenie
 ---
-class: center, middle
+class: center, middle, dataart
 
 ## 720p
 ---
@@ -30,7 +32,7 @@ Gdzie będzie prezentacja?:
 
 ]
 ---
-
+class: dataart
 # Dlaczego wykład o CLI?
 - spotkanie devops?
 --
@@ -38,6 +40,7 @@ Gdzie będzie prezentacja?:
 - dlaczego nie mówimy o docker albo aws?
 
 ---
+class: dataart
 # Co to jest CLI?
 ```
 CLI: Command-Line Interface
@@ -59,6 +62,7 @@ CLI: Command-Line Interface
   - python
   - i wiele innych
 ---
+class: dataart
 # Przykład
 ``` shell
 rm *
@@ -83,6 +87,7 @@ rm *
 - co jeszcze może pójść nie tak?
 
 ---
+class: dataart
 ## Czym jest rm?
 #### Gdzie jest?
 ``` shell
@@ -99,6 +104,7 @@ echo $PATH
 
 
 ---
+class: dataart
 ## Co może pójść nie tak?
 
 ``` shell
@@ -114,12 +120,11 @@ getconf ARG_MAX
 
 
 ---
-
 class: center, middle
 ![But how - meme](./img/But-how--meme-49242.jpg)
 
 ---
-
+class: dataart
 ## Co jest argumentem?
 --
 
@@ -139,6 +144,7 @@ echo rm *
 Tu  jak ktoś używa chwilę konsol powinien się natychmiast lekko skrzywić
 
 ---
+class: dataart
 ###  Jak to posprzątać?
 Wiemy że to nie działa
 ``` shell
@@ -175,6 +181,7 @@ class: center, middle
 ???
 Zanim jednak find to chwilę na pipe
 ---
+class: dataart
 # Procesy
 
 .center[![Proces: wyjścia i wejście](./img/Process.png)]
@@ -196,6 +203,7 @@ fortune | cowsay
 
 ```
 ---
+class: dataart
 # Przekierowania
 ``` shell
 date > log
@@ -214,6 +222,7 @@ cat log
 
 ```
 ---
+class: dataart
 # STDERR
 
 ``` shell
@@ -237,6 +246,7 @@ du log
 - `du` disk usage
 
 ---
+class: dataart
 # STDIN
 - command < file
 ``` shell
@@ -266,6 +276,7 @@ cat <<< hello world
 echo hello world | cat
 ```
 ---
+class: dataart
 # xargs
 ### Jak połączyć ze sobą jeżeli jedna z komend spodziewa się argumentu a dostaje STDIN?
 --
@@ -282,6 +293,7 @@ class: center, middle
 # Skrypty
 
 ---
+class: dataart
 # Podstawy
 ##  #! (Hash-Bang) - Interpreter
 ``` shell
@@ -296,6 +308,7 @@ class: center, middle
 #!/usr/bin/env python3
 ```
 ---
+class: dataart
 # ZMIENNE
 ``` bash
 SOME_VAR="some value"  # Nie ma tu spacji !
@@ -314,11 +327,12 @@ cat <<< $SOME_VAR
 ```
 --
 ``` bash
-MY_EXT_VAR=$(curl ipinfo.io/ip)
-MY_EXT_VAR=`curl ipinfo.io/ip` # deprecated
+MY_EXT_IP=$(curl ipinfo.io/ip)
+MY_EXT_IP=`curl ipinfo.io/ip` # deprecated
 ```
 
 ---
+class: dataart
 # Funkcje
 ### Definicja
 ``` bash
@@ -336,6 +350,7 @@ EOF
 ```
 
 ---
+class: dataart
 ### Co funkcja zwraca?
 ``` shell
 echo test
@@ -343,8 +358,33 @@ test
 echo $?
 0
 ```
+--
+``` shell
+rm tmp/*
+zsh: lista argumentów za długa: rm
+echo $?
+127
+```
+--
+``` shell
+grep 'tego tam nie ma' /etc/passwd
+
+echo $?
+1
+```
+--
+
+``` shell
+exit 127
+
+show_error() {
+...
+return 10
+}
+```
 
 ---
+class: dataart
 # Skróty klawiszowe
 ``` shell
 clear
@@ -369,6 +409,7 @@ class: center, middle
 # Find
 
 ---
+class: dataart
 ## Wróćmy do find
 ### podstawy
 
@@ -382,6 +423,7 @@ find /etc -not -name '*.conf'
 `-not` == `!`
 `-iname` case-insensitive
 ---
+class: dataart
 ## Szukanie po typie
 ### Pliki:
 ``` shell
@@ -398,6 +440,7 @@ find . -type d
 find . -type l
 ```
 ---
+class: dataart
 ## Szukanie po właścicielu
 ### User
 - `-user` szuka po nazwie usera (ew. po id)
@@ -422,6 +465,7 @@ find /var/log -gid 4
 find /var/log -not -uid 0  2>/dev/null
 ```
 ---
+class: dataart
 # Szukanie po rozmiarze
 - `-empty` szuka pustych plików
 
@@ -439,6 +483,7 @@ find .  -size +100M
 ```
 
 ---
+class: dataart
 # Szukanie po czasie  
 ### Zmieniony w ciągu ostatnich 15 minut:
 ``` shell
@@ -458,6 +503,7 @@ find . -newer index.php
 ```
 
 ---
+class: dataart
 # Szukanie - wykonywanie komend
 
 - `-exec` wykonuje komendę na wyniku wyszukiwania
@@ -479,4 +525,11 @@ należy uważać z nazwami plików zawierającymi znaki specjalne jaki i spacje
 ---
 class: center, middle
 
+# Pytania?
+---
+class: center, middle
+
 # Dziękuję
+---
+class: center, middle
+![DataArt - Logo](./img/DataArt_Logo.png)
