@@ -312,6 +312,11 @@ cat << EOD
 EOD # For IDE ;)
 cat <<< $SOME_VAR
 ```
+--
+``` bash
+MY_EXT_VAR=$(curl ipinfo.io/ip)
+MY_EXT_VAR=`curl ipinfo.io/ip`
+```
 
 ---
 # Funkcje
