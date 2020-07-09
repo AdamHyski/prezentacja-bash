@@ -381,7 +381,29 @@ show_error() {
 return 10
 }
 ```
-
+---
+class: dataart
+# Łączenie komend
+``` shell
+echo hello ; echo world
+hello
+world
+echo hello && echo world
+hello
+world
+echo hello || echo world
+hello
+```
+--
+``` shell
+[ ! -f running.flag ] && run_script
+[ -f running.flag ] || run_script
+```
+--
+``` shell
+[ -z $EMPTY_VAR] && run_script
+[ -n $NOT_EMPTY_VAR] && run_script
+```
 ---
 class: dataart
 # Skróty klawiszowe
@@ -389,20 +411,29 @@ class: dataart
 clear
 ```
 
-`Ctrl` + `L`
+`Ctrl` + `l`
 
 --
-## koniec STDIN
+### koniec STDIN:
 ``` shell
 exit
 ```
 
-`Ctrl` + `D`
-
+`Ctrl` + `d`
 --
 
+### przeszukiwanie historii:
+`Ctrl` + `r`
 ---
+class: dataart
+# Więcej skrótów
+`Atl` + `.` Powtarza ostatni argument z poprzedniej komendy
+--
 
+### skakanie po słowach:
+.center[![Skakanie](./img/console.jpeg)]
+
+---
 class: center, middle
 
 # Find
