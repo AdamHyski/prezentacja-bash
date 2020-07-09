@@ -283,7 +283,7 @@ class: center, middle
 
 ---
 # Podstawy
-##  #! (Hash-Bang)
+##  #! (Hash-Bang) - Interpreter
 ``` shell
 #!/bin/bash
 ```
@@ -293,8 +293,27 @@ class: center, middle
 ```
 --
 ``` shell
-#!/usr/bin/env python3 
+#!/usr/bin/env python3
 ```
+---
+# ZMIENNE
+``` bash
+SOME_VAR="some value"  # Nie ma tu spacji !
+
+echo $SOME_VAR
+echo "Możemy ją użyć tak $SOME_VAR"
+echo "albo tak ${SOME_VAR}"
+echo 'Tak jej nie użyjemy ${SOME_VAR} $SOME_VAR'
+cat << EOD
+> tak też zadziała:
+> $SOME_VAR
+> tu jakiś kontekst
+> EOD
+EOD # For IDE ;) 
+cat <<< $SOME_VAR
+```
+
+---
 
 ---
 
